@@ -53,4 +53,18 @@ function writePassword() {
   if (includeSymbols) {
     possibleCharacters += includeSymbols;
   }
+
+  for (var i = 0; i < characterLimit; i++) {
+    password +=
+      possibleCharacters[
+        Math.floor((Math.random() = possibleCharacters.length))
+      ];
+  }
+
+  //value for password - code from class
+  passwordText.value = password;
+  console.log(password);
 }
+
+// Add event listener to generate password - code from class
+generateBtn.addEventListener("click", writePassword);
