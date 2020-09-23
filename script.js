@@ -23,16 +23,34 @@ function writePassword() {
     alert("Password length should be between 8 and 128 characters");
     writePassword();
   }
+  //confirm if user wants uppercase letters in their password
   var includeUpper = confirm(
     "Would you like uppercase letters in your password?"
   );
+  //confirm if user wants lowercase letters in their password
   var includeLower = confirm(
     "Would you like lowercase letters in your password?"
   );
+  //confirm if user wants numbers in their password
   var includeNumbers = confirm(
     "Would you like to include numbers in your password?"
   );
+  //confirm if user wants symbols in their password
   var includeSymbols = confirm(
     "Would you like to include symbols in your password?"
   );
+
+  //User must choose at least one variable for password to generate - if user chooses more than 1, those variable types are added to password string
+  if (includeUpper) {
+    possibleCharacters += upper;
+  }
+  if (includeLower) {
+    possibleCharacters += lower;
+  }
+  if (includeNumbers) {
+    possibleCharacters += numbers;
+  }
+  if (includeSymbols) {
+    possibleCharacters += includeSymbols;
+  }
 }
