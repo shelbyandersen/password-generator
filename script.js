@@ -1,3 +1,7 @@
+//Create variables
+var generateBtn = document.querySelector("#generate");
+var passwordText = document.querySelector("#password");
+
 //Arrays for upper case letters, lower case letters, number, and symbols
 var randomUpper = [
   "A",
