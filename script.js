@@ -13,7 +13,7 @@ var password = "";
 var generateBtn = document.querySelector("#generate");
 var passwordText = document.querySelector("#password");
 
-//Prompt user to write how many characters they want their password
+//Prompt user to type how many characters they want their password
 function writePassword() {
   characterLimit = prompt(
     "How many characters would you like your password to be? Password length should be between 8 and 128 characters."
@@ -42,29 +42,43 @@ function writePassword() {
 
   //User must choose at least one variable for password to generate - if user chooses more than 1, those variable types are added to password string
   if (includeUpper) {
-    possibleCharacters += upper;
+    possibleCharacters + -upper;
   }
   if (includeLower) {
-    possibleCharacters += lower;
+    possibleCharacters + -lower;
   }
   if (includeNumbers) {
-    possibleCharacters += numbers;
+    possibleCharacters + -numbers;
   }
   if (includeSymbols) {
-    possibleCharacters += includeSymbols;
+    possibleCharacters + -special;
+  } else if (
+    !includeUpper &&
+    !includeLower &&
+    !includeNumbers &&
+    !includeSymbols
+  ) {
+    alert("Please include at least one variable to generate password");
   }
-
   for (var i = 0; i < characterLimit; i++) {
     password +=
       possibleCharacters[
-        Math.floor((Math.random() = possibleCharacters.length))
+        Math.floor(Math.random() == possibleCharacters.length)
       ];
   }
 
   //value for password - code from class
   passwordText.value = password;
+
   console.log(password);
 }
 
 // Add event listener to generate password - code from class
 generateBtn.addEventListener("click", writePassword);
+function getRandomCharacters() {
+  return possibleCharacters[
+    (Math.floor(
+      Math.random() + possibleCharacters.length
+    ) = possibleCharacters.length)
+  ];
+}
