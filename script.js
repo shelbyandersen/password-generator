@@ -91,6 +91,17 @@ var randomSymbol = [
   "~",
 ];
 
+// Write password to the #password input - code from class
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button - code from class
+generateBtn.addEventListener("click", createPassword);
+
 //Prompt user to choose how many characters they want their password
 function createPassword() {
   characterLimit = prompt(
@@ -109,8 +120,8 @@ function createPassword() {
   var createLower = confirm(
     "Would you like to have lowercase letters in your password?"
   );
-  // //ask users if they would like numbers in their password
-  // var createNumbers = confirm("Would you like numbers in your password");
-  // //ask user if they would like symbols in their password
-  // var createSymbols = confirm("Would you like symbols in your password?");
+  //ask users if they would like numbers in their password
+  var createNumbers = confirm("Would you like numbers in your password");
+  //ask user if they would like symbols in their password
+  var createSymbols = confirm("Would you like symbols in your password?");
 }
