@@ -1,6 +1,6 @@
 //Create variables
 //variables for password characters
-var upper = ["A", "B", "C"];
+var upper = ["A", "B", "C", "D"];
 var lower = ["a", "b", "c"];
 var special = ["@", "$", "!"];
 var numbers = ["1", "2", "3"];
@@ -15,6 +15,7 @@ var passwordText = document.querySelector("#password");
 
 //Prompt user to type how many characters they want their password
 function writePassword() {
+  password.length = 0;
   var characterLimit = prompt(
     "How many characters would you like your password to be? Password length should be between 8 and 128 characters."
   );
@@ -83,11 +84,11 @@ function writePassword() {
     // password.toString();
     console.log("Password: ", password);
   }
-  password.join(" ");
+  var joinedPassword = password.join("");
   // return password;
   // password.toString();
   //value for password - code from class
-  passwordText.value = password;
+  passwordText.value = joinedPassword;
 
   //   console.log(password);
 }
