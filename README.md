@@ -4,7 +4,7 @@
 
 This project features a password generator that a user can use to generate a random password based on specific criteria that they choose. The user is prompted to select the length of their password (between 8 and 128 characters) as well as if they would like to include uppercase letters, lowercase letters, numbers and/or symbols. When all selection criteria is met, a password is generated and appears on the screen.
 
-![Responsive Portfolio Website] (./assets/images/password-generator-application.png)
+![Password Generator](./assets/password-generator-application.png)
 
 Final Website Link: https://shelbyandersen.github.io/password-generator/
 
