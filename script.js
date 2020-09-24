@@ -20,7 +20,6 @@ function writePassword() {
     "How many characters would you like your password to be? Password length should be between 8 and 128 characters."
   );
   var parsedCharacterLimit = parseInt(characterLimit, 10);
-  console.log(parsedCharacterLimit);
 
   //Alert user if their choice is outside of character range or not a number
   if (
@@ -31,8 +30,6 @@ function writePassword() {
     alert("Please choose a number between 8 and 128.");
     return "Try again";
   } else {
-    console.log("Character Limit: ", characterLimit);
-    console.log("Character Limit Length: ", characterLimit.length);
   }
 
   //confirm if user wants uppercase letters in their password
@@ -51,7 +48,6 @@ function writePassword() {
   var includeSymbols = confirm(
     "Would you like to include symbols in your password?"
   );
-  console.log("Include Upper: ", includeUpper);
   //User must choose at least one variable for password to generate - if user chooses more than 1, those variable types are added to password string
   if (includeUpper === true) {
     possibleCharacters = possibleCharacters.concat(upper);
@@ -64,7 +60,6 @@ function writePassword() {
   }
   if (includeSymbols) {
     possibleCharacters = possibleCharacters.concat(special);
-    console.log("Combined User Input: ", possibleCharacters);
   } else if (
     !includeUpper &&
     !includeLower &&
@@ -79,27 +74,11 @@ function writePassword() {
   for (var i = 0; i < parsedCharacterLimit; i++) {
     randomCharacterValue =
       possibleCharacters[Math.floor(possibleCharacters.length * Math.random())];
-    console.log("Random Character Value: ", randomCharacterValue);
     password.push(randomCharacterValue);
-    // password.toString();
-    console.log("Password: ", password);
   }
   var joinedPassword = password.join("");
-  // return password;
-  // password.toString();
-  //value for password - code from class
   passwordText.value = joinedPassword;
-
-  //   console.log(password);
 }
 
 // Add event listener to generate password - code from class
 generateBtn.addEventListener("click", writePassword);
-
-// function getRandomCharacters() {
-//   return possibleCharacters[
-//     (Math.floor(
-//       Math.random() * possibleCharacters.length
-//     ) = possibleCharacters.length)
-//   ];
-// }
